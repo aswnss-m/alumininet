@@ -47,3 +47,11 @@
     --accent-color : #835E56;
     --radius-curve : 25px;
 }
+body{
+    width: 100vw;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Inter', sans-serif;
+}
