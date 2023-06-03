@@ -15,6 +15,8 @@ function Navbar() {
 
   const handleSignIn = () => {
     setPassport(true);
+     // reload the window
+     window.location.reload()
   };
 
   const handleLogOut = () => {
