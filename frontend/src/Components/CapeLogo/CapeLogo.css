@@ -3,12 +3,13 @@
     align-items: center;
     width: fit-content;
 }
-.capeLogoText p{
-    display: inline-block;
-}
 .capeLogoText {
     display: flex;
     flex-direction: column;
+}
+.capeLogoText p{
+    display: inline-block;
+    font-size: small;
 }
 .capeLogo img{
     /* width: 50px; */
