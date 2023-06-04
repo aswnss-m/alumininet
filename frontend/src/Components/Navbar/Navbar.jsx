@@ -43,7 +43,7 @@ function Navbar() {
       </div>
       {!loggedIn ? (
         <div className="navButtons">
-          <button className='secondaryButtton'>Join now</button>
+          <button className='secondaryButton'>Join now</button>
           <button className='primaryButton' onClick={handleSignIn}>Sign In</button>
         </div>
       ) : (

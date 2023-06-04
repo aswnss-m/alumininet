@@ -3,9 +3,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 .5em;
-    width: 100%;
+    /* width: 90vw; */
     gap: 1em;
-    height: 10vh;
+    height: fit-content;
 }
 .alumininetLogo{
     display: flex;
