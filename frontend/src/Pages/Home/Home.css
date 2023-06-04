@@ -40,4 +40,18 @@
                             "blog"
                             "profile";
     }
+    .eventSection ::before{
+        content: "";
+        width: 100%;
+        height: .5px;
+        background-color: black;
+    }
+    .eventSection ::after{
+        content: "";
+        width: 100%;
+        height: 1px;
+        color: black;
+        background-color: black;
+        margin-bottom: .5em;
+    }
 }
