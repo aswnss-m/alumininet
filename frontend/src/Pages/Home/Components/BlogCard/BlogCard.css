@@ -5,19 +5,17 @@
                         "blog blog blog"
                         "readmore blank contact";
     grid-template-columns: auto 4fr auto;
-    /* grid-template-rows: 1fr 1fr 1fr; */
-    background-color: #fff;
     text-align: left;
-    border-radius: var(--border-radius);
+    border-radius: 1em;
     overflow: hidden;
     padding: 1em;
     gap: 1em;
+    background-color: var(--primary-color);
 }
 .blogHeaderImage{
     grid-area : image;
     border-radius: 50%;
     overflow: hidden;
-    background-color: red;
     height: 5em;
     width : 5em;
     object-fit: cover;
@@ -28,7 +26,6 @@
     object-fit: cover;
 }
 .blogHeaderDetails {
-    background-color: #f00;
     grid-area: position;
     align-self: center;
 }

@@ -4,7 +4,7 @@ import "./ProfileCard.css";
 function ProfileCard() {
   return (
     <div className='profileCard'>
-      <span className="profileCardBanner" data-color="#000000"></span>
+      <span className="profileCardBanner"></span>
       <img src="https://unsplash.it/300" alt="" className="profileCardDp" />
       <div className="profileCardDetails">
         <h3 className="inter-500 profileCardName">Aswin Lal M</h3>
