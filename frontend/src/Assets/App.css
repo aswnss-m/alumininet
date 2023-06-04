@@ -8,7 +8,7 @@
     font-size:small;
 }
 
-.secondaryButtton{
+.secondaryButton{
     border: none;
     box-shadow:inset 0px 0px 0px 2px var(--secondary-color);
     background-color: rgb(0, 0, 0,0);
@@ -17,4 +17,27 @@
     color: var(--secondary-color);
     font-weight: 600;
     font-size:small;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+.formGroup{
+ display: flex;
+ width: 100%;
+ flex-direction: column;   
+gap: .5em;
+}
+.formGroup label{
+    font-size: small;
+    font-weight: 600;
+    opacity: 0.8;
+}
+.formGroup input{
+    border: none;
+    border-radius: calc(var(--radius-curve)/5);
+    padding: 1em;
+    background-color: rgb(0, 0, 0,0);
+    box-shadow:inset 0px 0px 0px 1px var(--accent-color);
 }

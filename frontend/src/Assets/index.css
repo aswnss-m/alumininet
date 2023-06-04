@@ -55,3 +55,7 @@ body{
 html{
     font-family: 'Inter', sans-serif;
 }
+/* Set the width of the scrollbar to zero */
+::-webkit-scrollbar {
+  width: 0;
+}
