@@ -28,10 +28,15 @@ function Navbar() {
   return (
     <div className='nav'>
       <div className="navLogo">
-        <span className='alumininetLogo'>
-          <img src={logo} alt="cap icon" />
-          <p className='logoName inter-800'>AluminiNet</p>
-        </span>
+        <Link to={'/'} style={{
+          textDecoration : 'none',
+          color : 'inherit'
+        }}>
+          <span className='alumininetLogo'>
+            <img src={logo} alt="cap icon" />
+            <p className='logoName inter-800'>AluminiNet</p>
+          </span>
+        </Link>
         <CapeLogo />
       </div>
       <div className="navLinks">
@@ -45,7 +50,7 @@ function Navbar() {
       {!loggedIn ? (
         <div className="navButtons">
           <Link to={'/register'}><button className='secondaryButton'>Join now</button></Link>
-          <button className='primaryButton' onClick={handleSignIn}>Sign In</button>
+          <Link to={'/login'}><button className='primaryButton'>Sign In</button></Link>
         </div>
       ) : (
         <div className="navButtons">

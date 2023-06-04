@@ -1,0 +1,23 @@
+.homeContainer{
+    display: grid;
+    grid-template-columns: .3fr auto .3fr;
+    grid-template-areas: "profile blog event";
+}
+.profileSection {
+    grid-area : profile;
+    width: 100%;
+    height: 20rem;
+    background: #000;
+}
+.blogSection {
+    grid-area : blog;
+    width: 100%;
+    height: 20rem;
+    background: #ff0;
+}
+.eventSection {
+    width: 100%;
+    height: 20rem;
+    grid-area : event;
+    background: #0f0;
+}
