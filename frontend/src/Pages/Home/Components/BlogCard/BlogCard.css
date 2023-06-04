@@ -3,7 +3,7 @@
     width: 100%;
     grid-template-areas : "image position position"
                         "blog blog blog"
-                        "readmore blank contact";
+                        "contact blank readmore";
     grid-template-columns: auto 4fr auto;
     text-align: left;
     border-radius: 1em;

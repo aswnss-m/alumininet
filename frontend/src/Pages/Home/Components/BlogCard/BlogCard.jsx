@@ -1,7 +1,13 @@
 import React from 'react'
 import "./BlogCard.css";
+import ReactMarkdown from 'react-markdown'
 
 function BlogCard() {
+  const markdown = `
+  ## This is a header
+  And this is a paragraph
+
+`
     return (
         <div className='blogCard'>
                 <div className="blogHeaderImage">
@@ -12,15 +18,10 @@ function BlogCard() {
                   <p className="inter-300">Design Lead</p>
                 </div>
             <div className="blogContent">
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. At, eius reiciendis esse hic aliquid deleniti sunt quas odit sapiente! Illo ipsa aliquid ullam a aut, error ducimus quaerat natus id?
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. At, eius reiciendis esse hic aliquid deleniti sunt quas odit sapiente! Illo ipsa aliquid ullam a aut, error ducimus quaerat natus id?
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. At, eius reiciendis esse hic aliquid deleniti sunt quas odit sapiente! Illo ipsa aliquid ullam a aut, error ducimus quaerat natus id?
-
-              </p>
+              <ReactMarkdown children={markdown}/>
             </div>
-                <button className='blogReadMore'>read more</button>
-                <button className='blogViewUser'>View User</button>
+                <button className='blogViewUser secondaryButton'>View User</button>
+                <button className='blogReadMore primaryButton'>read more</button>
         </div>
     )
 }
