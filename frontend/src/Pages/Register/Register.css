@@ -1,0 +1,15 @@
+.registerContainer{
+    display: grid;
+    width: 100%;
+    min-height: 80dvh;
+    place-items: center;
+}
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: min(900px, 90vmin);
+}
+.registerForm h1,p{
+    text-align: center;
+}

@@ -3,6 +3,7 @@ import logo from "./cap.png";
 import "./Navbar.css";
 import CapeLogo from '../CapeLogo/CapeLogo';
 import { setPassport, getPassport, removePassport } from '../../Utils/passport';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   // handle navbar change for sign in and signs out
@@ -43,7 +44,7 @@ function Navbar() {
       </div>
       {!loggedIn ? (
         <div className="navButtons">
-          <button className='secondaryButton'>Join now</button>
+          <Link to={'/register'}><button className='secondaryButton'>Join now</button></Link>
           <button className='primaryButton' onClick={handleSignIn}>Sign In</button>
         </div>
       ) : (
