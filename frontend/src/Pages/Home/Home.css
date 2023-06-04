@@ -1,23 +1,29 @@
 .homeContainer{
     display: grid;
-    grid-template-columns: .3fr auto .3fr;
+    grid-template-columns: 2fr 6fr 2fr;
     grid-template-areas: "profile blog event";
+    min-height: 100vh;
+    background-color: red;
+    padding: 1em 1em;
+    gap: 1em;
 }
 .profileSection {
     grid-area : profile;
     width: 100%;
+    display: flex;
+    justify-content: center;
     height: 20rem;
     background: #000;
 }
 .blogSection {
     grid-area : blog;
     width: 100%;
-    height: 20rem;
+    /* height: 20rem; */
     background: #ff0;
 }
 .eventSection {
     width: 100%;
-    height: 20rem;
+    /* height: 20rem; */
     grid-area : event;
     background: #0f0;
 }
