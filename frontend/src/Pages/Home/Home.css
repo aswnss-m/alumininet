@@ -18,7 +18,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1em    ;
+    gap: 1em;
     /* height: 20rem; */
 }
 .eventSection {
@@ -30,15 +30,16 @@
         grid-template-areas: "profile blog"
                             "event blog"
                             "none blog";
-        grid-template-columns: 1fr auto;
+        grid-template-columns: auto 1fr;
         grid-template-rows:auto auto;
     }
 }
 @media screen and (max-width: 700px) {
     .homeContainer{
         grid-template-areas: "event"
-                            "blog"
-                            "profile";
+        "blog"
+        "profile";
+        grid-template-columns:1fr;
     }
     .eventSection ::before{
         content: "";
