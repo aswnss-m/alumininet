@@ -1,0 +1,26 @@
+.blogPageContainer{
+    display: grid;
+    width: 100%;
+    min-height: 100dvh;
+    padding-top:3em;
+    place-items: center;
+}
+.blogPage{
+    width: min(900px, 95dvw);
+    min-height: inherit;
+}
+.blogPage p{
+    text-align: justify;
+}
+.blogPage *{
+    padding : .5em 0
+}
+.blogWriterHeader{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+.writerProfilePic img{
+    border-radius: 100%;
+    object-fit: fill;
+}
