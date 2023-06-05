@@ -16,6 +16,13 @@ const connection = mongoose.connection;
 connection.once('open',()=>{
     console.log("Mongoose Connection established");
 });
+studentsRouter = require('./routes/students');
+aluminiRouter = require('./routes/alumini');
+adminRouter = require('./routes/admin');
+
+app.use('/students',studentsRouter);
+app.use('/alumini',aluminiRouter);
+app.use('/admin',adminRouter);
 
 app.listen(port,()=>{
     console.log(`Server is running on port: ${port}`);

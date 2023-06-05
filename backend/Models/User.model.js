@@ -26,6 +26,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    type:{
+        type: boolean,
+        default: false,
+        required: true,
+    },
     branch:{
         type: String,
         required: true,
