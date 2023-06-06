@@ -3,7 +3,7 @@ import "./Login.css"
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import {API_URL} from "../../../Constants/"
-import setPassport from '../../Utils/passport'
+import {setPassport} from '../../Utils/passport'
 
 function Login() {
   const [email, setEmail] = useState("");
