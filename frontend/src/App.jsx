@@ -17,6 +17,7 @@ function App() {
         <div>
             <Navbar/>
             <Routes> {
+              // If not logged in, show landing page, register page and login page
                 !loggedIn ? <>
                     <Route path={'/'}
                         element={<Landing/>}/>
