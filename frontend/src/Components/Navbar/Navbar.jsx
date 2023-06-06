@@ -18,11 +18,12 @@ function Navbar() {
     setPassport(true);
      // reload the window
      window.location.reload()
-  };
-
-  const handleLogOut = () => {
-    removePassport();
-    setLoggedIn(false);
+    };
+    
+    const handleLogOut = () => {
+      window.location.reload()
+      removePassport();
+      setLoggedIn(false);
   };
 
   return (
