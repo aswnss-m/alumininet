@@ -8,7 +8,6 @@ import {API_URL} from "../../../Constants/"
 function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [batch, setBatch] = useState("2023");
@@ -27,7 +26,6 @@ function Register() {
     axios.post(`${API_URL}/register`, {
       name,
       email,
-      username,
       password,
       batch,
       branch,
@@ -55,10 +53,6 @@ function Register() {
         <div className="formGroup">
           <label htmlFor="email">Email</label>
           <input type="email" name="email" id="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </div>
-        <div className="formGroup">
-          <label htmlFor="username">username</label>
-          <input type="text" name="username" id="username" placeholder="Enter required username" value={username} onChange={(e) => setUsername(e.target.value)} />
         </div>
         <div className="formGroup">
           <label htmlFor="password">Password</label>
