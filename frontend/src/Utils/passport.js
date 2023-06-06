@@ -1,5 +1,6 @@
-export function setPassport(passport) {
-    localStorage.setItem('token', passport);
+export function setPassport(token, userId) {
+    localStorage.setItem('token', token);
+    localStorage.setItem('userId', userId);
 }
 export function getPassport() {
     return localStorage.getItem('token');
@@ -7,3 +8,4 @@ export function getPassport() {
 export function removePassport() {
     localStorage.removeItem('token');
 }
+export const userId = localStorage.getItem('userId');
