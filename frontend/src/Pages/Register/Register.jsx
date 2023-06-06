@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Register.css"
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import axios from 'axios'
+import {API_URL} from "../../../Constants/"
 
 function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [batch, setBatch] = useState("2023");
@@ -13,13 +16,32 @@ function Register() {
   const [phone, setPhone] = useState("");
   const [job, setJob] = useState("");
   const [company, setCompany] = useState("");
-  const [designation, setDesignation] = useState("");
-  const [skills, setSkills] = useState("");
-  const [interests, setInterests] = useState("");
+
 
   const handleRegister = (e) => {
     e.preventDefault();
-    // Your registration logic here
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return
+    }
+    axios.post(`${API_URL}/register`, {
+      name,
+      email,
+      username,
+      password,
+      batch,
+      branch,
+      number:phone,
+      job,
+      company,
+    }).then((res) => {
+      console.log(res);
+      alert("Registered successfully");
+      window.location.href = '/login'
+    }).catch((err) => {
+      console.log(err);
+      alert("Error in registering");
+    })
   }
 
   return (
@@ -33,6 +55,10 @@ function Register() {
         <div className="formGroup">
           <label htmlFor="email">Email</label>
           <input type="email" name="email" id="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        </div>
+        <div className="formGroup">
+          <label htmlFor="username">username</label>
+          <input type="text" name="username" id="username" placeholder="Enter required username" value={username} onChange={(e) => setUsername(e.target.value)} />
         </div>
         <div className="formGroup">
           <label htmlFor="password">Password</label>
@@ -65,18 +91,7 @@ function Register() {
               <label htmlFor="company">Company</label>
               <input type="text" name="company" id="company" placeholder="Enter your company" value={company} onChange={(e) => setCompany(e.target.value)} />
             </div>
-            <div className="formGroup">
-              <label htmlFor="designation">Designation</label>
-              <input type="text" name="designation" id="designation" placeholder="Enter your designation" value={designation} onChange={(e) => setDesignation(e.target.value)} />
-            </div>
-            <div className="formGroup">
-              <label htmlFor="skills">Skills</label>
-              <input type="text" name="skills" id="skills" placeholder="Enter your skills" value={skills} onChange={(e) => setSkills(e.target.value)} />
-            </div>
-            <div className="formGroup">
-              <label htmlFor="interests">Interests</label>
-              <input type="text" name="interests" id="interests" placeholder="Enter your interests" value={interests} onChange={(e) => setInterests(e.target.value)} />
-            </div>
+    
           </>
         )}
 

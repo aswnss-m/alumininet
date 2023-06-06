@@ -19,10 +19,12 @@ connection.once('open',()=>{
 studentsRouter = require('./routes/students');
 aluminiRouter = require('./routes/alumini');
 adminRouter = require('./routes/admin');
+registerRouter = require('./routes/register');
 
 app.use('/students',studentsRouter);
 app.use('/alumini',aluminiRouter);
 app.use('/admin',adminRouter);
+app.use('/register',registerRouter);
 
 app.listen(port,()=>{
     console.log(`Server is running on port: ${port}`);

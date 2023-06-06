@@ -41,9 +41,6 @@ const userSchema = new mongoose.Schema({
     company: {
         type: String,
     },
-    interests: {
-        type: String,
-    },
     blogs: [
         {
             type: mongoose.Schema.Types.ObjectId,

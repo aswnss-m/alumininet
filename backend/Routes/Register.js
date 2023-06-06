@@ -3,15 +3,14 @@ const router = express.Router();
 const User = require('../Models/User.model');
 
 router.route('/').post(async (req, res) => {
-  const { name, email, username, password, number, batch, branch, job, company, interests } = req.body;
-
+  const { name, email, username, password, number, batch, branch, job, company } = req.body;
   try {
     // Check if the username already exists
     const existingUser = await User.findOne({ username });
     if (existingUser) {
       return res.status(400).json({ message: 'Username already exists' });
     }
-    const type = false;
+    let type = false;
     const year = new Date().getFullYear();
     if (Number(batch) < year){
         type = true;
@@ -28,7 +27,6 @@ router.route('/').post(async (req, res) => {
       type,
       job: job || '',
       company: company || '',
-      interests,
     });
 
     // Save the new user
