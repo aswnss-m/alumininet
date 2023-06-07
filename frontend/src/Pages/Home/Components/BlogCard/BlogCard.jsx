@@ -5,7 +5,8 @@ import ReactMarkdown from 'react-markdown'
 function BlogCard() {
   const markdown = `
   ## This is a header
-  And this is a paragraph
+  And this is a paragrapha paragrapha paragrapha paragrapha paragrapha paragrapha paragrapha 
+  paragrapha paragrapha paragrapha paragrapha paragrapha paragrapha paragrapha paragraph
 
 `
     return (

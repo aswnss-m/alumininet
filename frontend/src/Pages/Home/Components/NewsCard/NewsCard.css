@@ -1,0 +1,14 @@
+.newsCard{
+    display: grid;
+    width: 100%;
+    max-width:55em;
+    background-color: var(--primary-color);
+    border-radius: 1em;
+    /* overflow: hidden; */
+    grid-template-rows: 1fr auto;
+    gap: 1em;
+    padding: 1em;
+}
+.markdown :where(h1,h2,h3,h4,h5,h6,p,ol,li){
+    text-align: justify;
+}

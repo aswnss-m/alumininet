@@ -2,7 +2,9 @@ import React from 'react'
 import ProfileCard from "./Components/ProfileCard/ProfileCard";
 import BlogCard from "./Components/BlogCard/BlogCard";
 import EventCard from './Components/EventCard/EventCard';
+import NewsCard from './Components/NewsCard/NewsCard';
 import "./Home.css";
+import NewsSideCard from './Components/EventCard/NewsSideCard';
 // import { Link } from 'react-router-dom';
 function Home() {
   return (
@@ -11,6 +13,7 @@ function Home() {
         <ProfileCard />
       </div>
       <div className="blogSection">
+        <NewsCard />
         <BlogCard />
         <BlogCard />
         <BlogCard />
@@ -18,6 +21,7 @@ function Home() {
       </div>
       <div className="eventSection">
         <EventCard />
+        <NewsSideCard />
       </div>
     </div>
   )
