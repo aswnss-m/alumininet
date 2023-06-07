@@ -67,7 +67,7 @@ Embracing volunteer work during your college years can be a transformative exper
                         <h5>Design Lead</h5>
                     </span>
             </div>
-            <ReactMarkdown children={blog_content} />
+            <ReactMarkdown children={blog_content}  />
         </div>
     </div>
   )

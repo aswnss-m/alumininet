@@ -7,6 +7,7 @@ import Register from './Pages/Register/Register'
 import Login from './Pages/Login/Login'
 import Home from './Pages/Home/Home'
 import BlogPage from './Pages/BlogPage/BlogPage'
+import NewsPage from './Pages/NewsPage/NewsPage'
 import {getPassport} from './Utils/passport'
 function App() {
     const [loggedIn, setLoggedIn] = useState(getPassport());
@@ -16,7 +17,9 @@ function App() {
     return (
         <div>
             <Navbar/>
-            <Routes> {
+            <Routes> 
+                {/* Specific Routes */}
+                {
               // If not logged in, show landing page, register page and login page
                 !loggedIn ? <>
                     <Route path={'/'}
@@ -30,8 +33,12 @@ function App() {
                         element={<Home/>}/>
                     <Route path={'/blog/:id'}
                         element={<BlogPage/>}/>
+                    <Route path={'/news/:id'}
+                    element = {<NewsPage/>}/>
                 </>
-            } </Routes>
+            } 
+
+            </Routes>
         </div>
     )
 }

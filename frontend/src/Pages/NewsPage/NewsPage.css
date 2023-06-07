@@ -1,0 +1,8 @@
+.newsPageContainer{
+    display: grid;
+    width: 100%;
+    place-items: center;
+}
+.newsPage{
+    width: min(900px,95vw);
+}
