@@ -1,0 +1,14 @@
+const express = require('express');
+const router = express.Router();
+const User = require('../Models/User.model');
+
+router.route('/profile').get((req, res) => {
+  const id = req.query.id;
+  console.log(id);
+  User.findById(id, '-password') // Exclude the password field
+    .then(user => res.json(user))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+
+module.exports = router;

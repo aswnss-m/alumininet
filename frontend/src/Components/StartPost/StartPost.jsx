@@ -1,8 +1,24 @@
 import React, {useState} from 'react'
+import axios  from 'axios'
+import {API_URL} from "../../../Constants/"
+
 import "./StartPost.css"
 function StartPost() {
   const [row, setRow] = useState(1)
   const [post, setPost] = useState('')
+  const userId = localStorage.getItem('userId')
+  const handlePost = () => {
+    axios.post(`${API_URL}/blog/add`, {
+      userId,
+      content: post
+    }).then(res => {
+      console.log(res.data)
+    }).catch(err => {
+      console.log(err)
+    }
+    )
+
+  }
   return (
     <div className='startPost'>
       <p className='postBox'>Write a Post</p>
@@ -16,7 +32,9 @@ function StartPost() {
       onChange={(e)=>{
         setPost(e.target.value)
       }}></textarea>
-      <button className="primaryButton">Post</button>
+      <button className="primaryButton" onClick={()=>{
+        handlePost()
+      }}>Post</button>
     </div>
   )
 }
