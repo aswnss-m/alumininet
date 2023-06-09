@@ -1,0 +1,16 @@
+.startPost{
+    display: grid;
+    width: 100%;
+    gap: .5em;
+}
+.startPost p{
+    text-align: left;
+}
+.postBox{
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+textarea {
+    padding: 1em;
+    
+}
