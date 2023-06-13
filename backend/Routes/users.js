@@ -10,5 +10,15 @@ router.route('/profile').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/author/:id').get((req, res) => {
+  const id = req.params.id;
+  console.log(id);
+  User.findById(id, 'name job') // Retrieve only the name and job fields
+    .then(user => res.json({
+      name: user.name,
+      job: user.job
+    }))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
 
 module.exports = router;

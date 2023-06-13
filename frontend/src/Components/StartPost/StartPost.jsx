@@ -13,16 +13,18 @@ function StartPost() {
       content: post
     }).then(res => {
       console.log(res.data)
+      window.location.reload()
+      setPost('')
+
     }).catch(err => {
       console.log(err)
     }
     )
-
   }
   return (
     <div className='startPost'>
       <p className='postBox'>Write a Post</p>
-      <textarea name="postBox" id="" cols="30" rows={row} onFocus={()=>{
+      <textarea name="postBox" id="" cols="30" rows={row} value={post} onFocus={()=>{
         setRow(10)
       }} onBlur={()=>{
         if(post.length === 0){

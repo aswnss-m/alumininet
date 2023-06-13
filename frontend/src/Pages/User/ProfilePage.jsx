@@ -7,8 +7,10 @@ import StartPost from '../../Components/StartPost/StartPost'
 
 function ProfilePage() {
   const [profile, setProfile] = React.useState({})
+  const [blogs, setBlogs] = React.useState([]) // Added state for blogs
+  const [id, setId] = React.useState('');
   useEffect(() => {
-    const id = localStorage.getItem('userId');
+    setId(localStorage.getItem('userId'));
     axios.get(`${API_URL}/users/profile?id=${id}`)
       .then(res => {
         setProfile(res.data);
@@ -17,13 +19,13 @@ function ProfilePage() {
       .catch(err => {
         console.log(err);
       });
-  }, []);
+  }, [id]);
   
   return (
     <div className='profilePageContainer'>
       <div className="profilePageCard">
          <div className="profilePageCardDP">
-          <img src="https://unsplash.it/200" alt="" />
+          <img src={`https://unsplash.it/200?image=${id.slice(0,2)}`} alt="" />
          </div>
           <div className="profilePageCardInfo">
             <h2>{profile.name}</h2>
@@ -37,18 +39,6 @@ function ProfilePage() {
     </div>
     <div className="profilePageCard">
       <h1><u>Your blogs</u></h1>
-    </div>
-    <div className="profilePageCard">
-      <BlogCard />
-    </div>
-    <div className="profilePageCard">
-      <BlogCard />
-    </div>
-    <div className="profilePageCard">
-      <BlogCard />
-    </div>
-    <div className="profilePageCard">
-      <BlogCard />
     </div>
     </div>
   )
