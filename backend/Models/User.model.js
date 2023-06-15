@@ -23,6 +23,7 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     type: {
+        // if true alunimi else student
         type: Boolean,
         default: false,
         required: true,

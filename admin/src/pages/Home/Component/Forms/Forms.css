@@ -1,0 +1,73 @@
+.table{
+    width: min(800px, 100%);
+}
+th,td{
+    padding: 1em 0;
+    text-align: left;
+}
+.tableAction{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.tableAction button{
+    padding: 0.25em;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+   
+    background-color: rgb(0,0,0,0);
+}
+.tableAction button:hover{
+    background-color: rgb(0,0,0,0.1);
+}
+*{
+    transition: 0.3s;
+}
+.form{
+    width: min(800px, 100%);
+}
+.eventCards{
+    width: min(800px, 100%);
+    margin-top: 2em;
+    display: grid;
+    gap: 2em;
+}
+.eventCard{
+    display: grid;
+    grid-template-areas: "title title title"
+                        "desc desc desc"
+                        "dt venue author"
+                        "button null null";
+    
+    align-items: center;
+    gap: .5em;
+}
+.eventTitle{
+    grid-area: title;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.eventDescription{
+    grid-area: desc;
+}
+.eventDate{
+    grid-area: dt;
+    font-weight: bold;
+}
+.eventVenue{
+    grid-area: venue;
+    font-weight: bold;
+}
+.eventAuthor{
+    grid-area: author;
+}
+.eventAction{
+    grid-area: button;
+    align-self: flex-end;
+}
+.eventAction button{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}

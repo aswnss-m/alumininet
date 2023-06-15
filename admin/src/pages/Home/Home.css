@@ -1,0 +1,11 @@
+.homeContainer{
+    display: grid;
+    width: 100%;
+    grid-template-rows: auto auto;
+}
+.homeContent{
+    display: grid;
+    width: 100%;
+    place-items: center;
+    margin-top: 1em;
+}

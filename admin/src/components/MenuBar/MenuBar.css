@@ -1,0 +1,30 @@
+.menuBarContainer{
+    display: grid;
+    width: 100%;
+    padding: 1em 0;
+    place-items: center;
+}
+.menuBar{
+    display: flex;
+    width: min(800px,100%);
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 0em 1em;
+}
+.menuLink{
+    display: flex;
+    align-items: center;
+    width: 8.5em;
+    gap: .25em;
+    background-color: var(--secondary-color);
+    padding: .5em 1em;
+    border-radius: .25em;
+    color: white;
+    justify-content: center;
+}
+
+/* increase brightness on hover */
+.menuLink:hover{
+    filter: brightness(1.2);
+}
