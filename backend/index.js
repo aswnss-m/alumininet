@@ -1,8 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require('mongoose');
-const Blog = require("./Models/Blog.model");
-
 require('dotenv').config();
 const app = express();
 const port = process.env.PORT
@@ -19,11 +17,11 @@ connection.once('open',()=>{
 });
 studentsRouter = require('./routes/students');
 aluminiRouter = require('./routes/alumini');
-adminRouter = require('./routes/admin');
 registerRouter = require('./routes/register');
 loginRouter = require('./routes/login');
 userRouter = require('./Routes/users');
 blogRouter = require('./Routes/blog');
+adminRouter = require('./Routes/admin');
 
 app.use('/students',studentsRouter);
 app.use('/alumini',aluminiRouter);

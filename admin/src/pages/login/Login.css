@@ -1,0 +1,9 @@
+.loginContainer{
+    display: grid;
+    width: 100%;
+    min-height: 100vh;
+    place-items: center;
+}
+.loginForm{
+    width: min(800px,95vw);
+}

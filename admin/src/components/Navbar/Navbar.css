@@ -1,0 +1,75 @@
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .5em;
+    /* width: 90vw; */
+    gap: 1em;
+    height: fit-content;
+}
+.alumininetLogo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logoName{
+    display: inline-block;
+}
+.navLogo{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding : 1em 1em;
+}
+.pageBreaker-vertical{
+    height: 1.5em;
+    width: 100px;
+    background-color: var(--black-color);
+}
+.navButtons{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.navLinks{
+    text-decoration: none;
+    color: var(--black-color);
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    color: var(--secondary-color);
+}
+@media screen  and (max-width : 700px){
+    .nav{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        height: fit-content;
+    }
+    /* .navButtons{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+    } */
+    .navLogo{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+    }
+    .pageBreaker-vertical{
+        height: 1.5em;
+        width: 100px;
+        background-color: var(--black-color);
+    }
+    .navLinks{
+        text-decoration: none;
+        color: var(--black-color);
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        color: var(--secondary-color);
+    }
+}
