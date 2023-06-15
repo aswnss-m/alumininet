@@ -2,9 +2,13 @@ import React,{useState, useEffect} from 'react'
 import axios from 'axios'
 import "./Forms.css"
 import { API_URL } from '../../../../Constants'
+import { useNavigate } from 'react-router-dom'
 
 function Alumini() {
     const [aluminis, setAluminis] = useState([])
+    const nav = useNavigate()
+
+    // Get all alumni list
     useEffect(() => {
         axios.get(`${API_URL}/admin/all/alumni`)
         .then(res => {
@@ -14,6 +18,21 @@ function Alumini() {
             console.log(err)
         })
     }, [])
+
+  // Delete an alumni
+const handleDelete = (id) => {
+    axios
+      .delete(`${API_URL}/admin/delete/alumni?id=${id}`)
+      .then((res) => {
+        console.log(res);
+        nav("/alumini")
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  
+
   return (
     <table className='table'>
         <thead className = "tableHead">
@@ -36,7 +55,11 @@ function Alumini() {
                 {/* <button>
                     <span className='material-symbols-outlined'>edit</span>
                 </button> */}
-                <button>
+                <button onClick={
+                    () => {
+                        handleDelete(alumini._id)
+                    }
+                }>
                     <span className='material-symbols-outlined'>delete</span>
                 </button>
             </td>

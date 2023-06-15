@@ -3,37 +3,30 @@ import './Forms.css';
 import axios from 'axios';
 import { API_URL } from '../../../../Constants';
 
-function Event() {
+function News() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [date, setDate] = useState('');
-  const [venue, setVenue] = useState('');
-  const [time, setTime] = useState('');
   const [isEventFocused, setIsEventFocused] = useState(false);
-  const [events, setEvents] = useState([]);
-
-  // Fetch all events from the database   
+  const [news, setNews] = useState([]);
   useEffect(() => {
-    axios.get(`${API_URL}/admin/all/events`).then((res) => {
-        setEvents(res.data);
+    axios.get(`${API_URL}/admin/all/news`).then((res) => {
+        setNews(res.data);
         })
         .catch((err) => {
             console.log(err);
         });
     }, []);
-// Add Event to the database
+    
   const handleSubmit = (e) => {
     e.preventDefault();
     // Get the input values from stateful variables
-    console.log(title, description, date, venue, time);
     const formattedDate = new Date(date).toLocaleDateString(); // Convert date to ISO 8601 format
     axios
-      .post(`${API_URL}/admin/add/event`, {
+      .post(`${API_URL}/admin/add/news`, {
         title,
         description,
         date: formattedDate,
-        venue,
-        time,
       })
       .then((res) => {
         console.log(res.data);
@@ -45,13 +38,14 @@ function Event() {
     setTitle('');
     setDescription('');
     setDate('');
-    setVenue('');
-    setTime('');
   };
 
-//   Delete Event
+  const handleEventFocus = () => {
+    setIsEventFocused(true);
+  };
+//   Delete News
 const handleDelete = (id)=>{
-    axios.delete(`${API_URL}/admin/delete/event?id=${id}`).then((res)=>{
+    axios.delete(`${API_URL}/admin/delete/news?id=${id}`).then((res)=>{
         console.log(res.data);
     }
     ).catch((err)=>{
@@ -59,16 +53,12 @@ const handleDelete = (id)=>{
     }
     )
 }
-  const handleEventFocus = () => {
-    setIsEventFocused(true);
-  };
-
 
   return (
     <>
       <div className="form">
         <div className="formGroup">
-          <label htmlFor="title">Event Title</label>
+          <label htmlFor="title">News Title</label>
           <input
             type="text"
             name="title"
@@ -99,25 +89,6 @@ const handleDelete = (id)=>{
                 onChange={(e) => setDate(e.target.value)}
               />
             </div>
-            <div className="formGroup">
-              <label htmlFor="time">Time</label>
-              <input
-                type="time"
-                name="time"
-                value={time}
-                onChange={(e) => setTime(e.target.value)}
-              />
-            </div>
-            <div className="formGroup">
-              <label htmlFor="venue">Venue</label>
-              <input
-                type="text"
-                name="venue"
-                id="venue"
-                value={venue}
-                onChange={(e) => setVenue(e.target.value)}
-              />
-            </div>
           </>
         )}
         {isEventFocused && (
@@ -127,20 +98,17 @@ const handleDelete = (id)=>{
         )}
       </div>
       <div className="eventCards">
-        {events.map((event) => (
-        <div className="eventCard" key={event._id}>
-          <div className="eventTitle">{event.title}</div>
+        {news.map((News) => (
+        <div className="eventCard" key={News._id}>
+          <div className="eventTitle">{News.title}</div>
           <div className="eventDescription">
-            {event.description}
+            {News.description}
             </div>
           <div className="eventDate">
-            {event.date} | {event.time}
+            {News.date} | {News.time}
           </div>
-          <div className="eventVenue">
-            {event.venue}
-          </div>
-          <div className="eventAction">
-            <button className='primaryButton' onClick={()=>{handleDelete(event._id)}}>
+          <div className="eventAction" onClick={()=>{handleDelete(News._id)}}>
+            <button className='primaryButton'>
               <span className='material-symbols-outlined'>delete</span> Delete
             </button>
           </div>
@@ -151,4 +119,4 @@ const handleDelete = (id)=>{
   );
 }
 
-export default Event;
+export default News;
