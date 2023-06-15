@@ -19,13 +19,20 @@ function ProfilePage() {
       .catch(err => {
         console.log(err);
       });
+      axios.get(`${API_URL}/blog/user/${id}`).then(res => {
+        setBlogs(res.data);
+      }
+      ).catch(err => {
+        console.log(err);
+      }
+      );
   }, [id]);
   
   return (
     <div className='profilePageContainer'>
       <div className="profilePageCard">
          <div className="profilePageCardDP">
-          <img src={`https://unsplash.it/200?image=${id.slice(0,2)}`} alt="" />
+          <img src={`https://unsplash.it/200`} alt="" />
          </div>
           <div className="profilePageCardInfo">
             <h2>{profile.name}</h2>
@@ -37,8 +44,11 @@ function ProfilePage() {
     <div className="profilePageCard">
       <StartPost />
     </div>
-    <div className="profilePageCard">
+    <div className="profileBlogCard">
       <h1><u>Your blogs</u></h1>
+      {blogs.map(blog => (
+          <BlogCard key={blog._id} content={blog.content} author={blog.author} id = {blog._id}/> // Added key prop
+        ))}
     </div>
     </div>
   )
