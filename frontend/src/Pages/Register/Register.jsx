@@ -33,11 +33,11 @@ function Register() {
             job,
             company
         }).then((res) => {
-            console.log(res);
+             ;
             alert("Registered successfully");
             window.location.href = '/login'
         }).catch((err) => {
-            console.log(err);
+             ;
             alert("Error in registering");
         })
     }

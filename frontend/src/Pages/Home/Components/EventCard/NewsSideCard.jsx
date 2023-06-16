@@ -10,7 +10,7 @@ function NewsSideCard() {
         setNews(res.data);
         })
         .catch((err) => {
-            console.log(err);
+             ;
         });
     }, []);
   return (

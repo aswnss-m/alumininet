@@ -15,9 +15,9 @@ function ProfilePage() {
         setId(localStorage.getItem('userId'));
         axios.get(`${API_URL}/users/profile?id=${id}`).then(res => {
             setProfile(res.data);
-            console.log(res.data);
+             ;
         }).catch(err => {
-            console.log(err);
+             ;
         });
     }, [id]);
     useEffect(() => {
@@ -27,7 +27,7 @@ function ProfilePage() {
             setBlogs(res.data);
           })
           .catch(err => {
-            console.log(err);
+             ;
           });
       } else {
         axios.get(`${API_URL}/blog/all`)
@@ -35,7 +35,7 @@ function ProfilePage() {
             setAllBlogs(res.data);
           })
           .catch(err => {
-            console.log(err);
+             ;
           });
       }
     }, [id, profile.type]);

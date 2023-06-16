@@ -16,10 +16,10 @@ function Home() {
     axios.get(`${API_URL}/users/profile?id=${id}`)
       .then(res => {
         setProfile(res.data);
-        console.log(res.data);
+         ;
       })
       .catch(err => {
-        console.log(err);
+         ;
       });
   }, [localStorage.getItem('userId')]);
 
@@ -27,10 +27,10 @@ function Home() {
     axios.get(`${API_URL}/blog/all`)
       .then(res => {
         setBlogs(res.data);
-        console.log(res.data)
+         
       })
       .catch(err => {
-        console.log(err);
+         ;
       });
   }, []);
 

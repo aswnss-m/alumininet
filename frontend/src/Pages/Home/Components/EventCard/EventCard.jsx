@@ -7,11 +7,11 @@ function EventCard() {
 const [events , setEvents] = useState([])
 useEffect(() => {
   axios.get(`${API_URL}/admin/all/events`).then((res) => {
-      console.log(res.data);
+       ;
       setEvents(res.data);
       })
       .catch((err) => {
-          console.log(err);
+           ;
       });
   }, []);
 

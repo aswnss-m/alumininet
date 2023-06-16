@@ -12,12 +12,12 @@ function StartPost() {
       userId,
       content: post
     }).then(res => {
-      console.log(res.data)
+       
       window.location.reload()
       setPost('')
 
     }).catch(err => {
-      console.log(err)
+       
     }
     )
   }

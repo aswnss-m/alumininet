@@ -14,7 +14,7 @@ function BlogCard({content,author,id}) {
       setName(res.data.name);
       setJob(res.data.job);
     }).catch(err => {
-      console.log(err);
+       ;
     });
   }, [author]);
 
