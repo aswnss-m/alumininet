@@ -5,7 +5,6 @@ const User = require('../Models/User.model');
 router.route('/').post(async (req, res) => {
   const { name, email, password, number, batch, branch, job, company } = req.body;
   try {
-    // Check if the username already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: 'Email already exists' });
@@ -19,7 +18,7 @@ router.route('/').post(async (req, res) => {
     const newUser = new User({
       name,
       email,
-      password,
+      password, 
       number,
       batch,
       branch,
@@ -32,6 +31,7 @@ router.route('/').post(async (req, res) => {
     await newUser.save();
     res.json('User added!');
   } catch (error) {
+    console.log(error)
     res.status(400).json({ message: 'Error: ' + error });
   }
 });

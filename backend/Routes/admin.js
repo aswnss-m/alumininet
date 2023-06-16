@@ -50,6 +50,24 @@ router.route('/all').get((req, res) => {
       .catch(err => res.status(400).json('Error: ' + err));
   });
 
+  //get all the admins
+router.route('/all/admins').get((req, res) => {
+    Admin.find().then(admins => res.json(admins)).catch(err => res.status(400).json('Error: ' + err));
+});
+
+//route to add admin
+router.route('/add/admin').post((req, res) => {
+    const { name, username, password } = req.body;
+    const newAdmin = new Admin({
+      name,
+      username,
+      password,
+    });
+    newAdmin.save()
+      .then(() => res.json('Admin added!'))
+      .catch(err => res.status(400).json('Error: ' + err));
+  });
+
 // login route for admin
 router.route('/login').post(async (req, res) => {
   const username = req.body.username;

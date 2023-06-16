@@ -18,7 +18,7 @@ useEffect(() => {
   return (
     <div className='eventCardContainer'>
       <p className="inter-800">Events</p>
-        {events.map((event)=>(<div className="eventListing">
+        {events.map((event)=>(<div className="eventListing" key={event._id}>
       <span style={{
         textDecoration: 'none',
       }} key={event._id}>

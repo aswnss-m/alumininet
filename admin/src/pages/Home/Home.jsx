@@ -6,6 +6,7 @@ import {Routes,Route} from 'react-router-dom'
 import Alumini from './Component/Forms/Alumini'
 import Event from './Component/Forms/Event'
 import News from './Component/Forms/News'
+import Admins from './Component/Forms/Admins'
 function Home() {
   return (
     <div className='homeContainer'>
@@ -16,6 +17,7 @@ function Home() {
           < Route path='/alumini' element={<Alumini />} />
           < Route path='/events' element={<Event />} />
           < Route path='/news' element={<News />} />
+          <Route path='/admin' element={<Admins />} />
         </Routes>
       </div>
     </div>

@@ -22,8 +22,7 @@ function Student() {
         axios
           .delete(`${API_URL}/admin/delete/student?id=${id}`)
           .then((res) => {
-            console.log(res);
-            nav("/alumini")
+            window.location.reload();
           })
           .catch((err) => {
             console.log(err);

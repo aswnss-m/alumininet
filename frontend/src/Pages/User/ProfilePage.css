@@ -35,6 +35,7 @@
 }
 .profileBlogCard{
     display: flex;
+    width: min(800px,100%);
     flex-direction: column;
     gap: 1em;
 }

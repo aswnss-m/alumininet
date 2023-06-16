@@ -8,21 +8,22 @@ function Landing() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const handeSubmit = (e) => {
-      e.preventDefault();
-      axios
-        .post(`${API_URL}/login`, { email, password })
-        .then((res) => {
-          if (res.status === 200) {
-            setPassport(res.data.token, res.data.userId);
-            window.location.reload();
-          }
-        })
-        .catch((err) => {
-          if (err.response.status === 401) {
-            alert(err.response.data.message);
-          }
-        });
-    };
+        e.preventDefault();
+        axios.post(`${API_URL}/login`, { email, password })
+          .then((res) => {
+            if (res.status === 200) {  // Add a check for res object existence
+              setPassport(res.data.token, res.data.userId);
+              window.location.reload();
+              nav("/");
+            }
+          })
+          .catch((err) => {
+            if (err && err.response && err.response.status === 401) {  // Add checks for err and err.response objects
+              alert(err.response.data.message);
+            }
+          });
+      };
+      
     return (
         <div className='landingPageContainer'>
             <div className="landingPageContent">

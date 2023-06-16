@@ -29,7 +29,7 @@ function News() {
         date: formattedDate,
       })
       .then((res) => {
-        console.log(res.data);
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
@@ -46,7 +46,7 @@ function News() {
 //   Delete News
 const handleDelete = (id)=>{
     axios.delete(`${API_URL}/admin/delete/news?id=${id}`).then((res)=>{
-        console.log(res.data);
+      window.location.reload();
     }
     ).catch((err)=>{
         console.log(err);

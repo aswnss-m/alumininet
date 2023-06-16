@@ -36,7 +36,7 @@ function Event() {
         time,
       })
       .then((res) => {
-        console.log(res.data);
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
@@ -52,7 +52,7 @@ function Event() {
 //   Delete Event
 const handleDelete = (id)=>{
     axios.delete(`${API_URL}/admin/delete/event?id=${id}`).then((res)=>{
-        console.log(res.data);
+      window.location.reload();
     }
     ).catch((err)=>{
         console.log(err);

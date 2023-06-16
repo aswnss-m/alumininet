@@ -23,7 +23,7 @@ function Register() {
       alert("Passwords do not match");
       return
     }
-    axios.post(`${API_URL}/register`, {
+    axios.post(`${API_URL}/ `, {
       name,
       email,
       password,

@@ -24,8 +24,7 @@ const handleDelete = (id) => {
     axios
       .delete(`${API_URL}/admin/delete/alumni?id=${id}`)
       .then((res) => {
-        console.log(res);
-        nav("/alumini")
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);

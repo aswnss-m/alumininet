@@ -1,8 +1,10 @@
 import React from 'react'
 import "./ProfileCard.css";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import {API_URL} from "/Constants/index.js"
 function ProfileCard() {
+  const navigate = useNavigate();
   const [profile, setProfile] = React.useState({})
   React.useEffect(() => {
     const id = localStorage.getItem('userId');
@@ -16,7 +18,7 @@ function ProfileCard() {
       });
   }, [localStorage.getItem('userId')]);
   return (
-    <div className='profileCard'>
+    <div className='profileCard' onClick={()=>{navigate('/profile')}}>
       <span className="profileCardBanner"></span>
       <img src="https://unsplash.it/300" alt="" className="profileCardDp" />
       <div className="profileCardDetails">

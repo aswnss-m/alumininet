@@ -15,10 +15,10 @@ const connection = mongoose.connection;
 connection.once('open',()=>{
     console.log("Mongoose Connection established");
 });
-studentsRouter = require('./routes/students');
-aluminiRouter = require('./routes/alumini');
-registerRouter = require('./routes/register');
-loginRouter = require('./routes/login');
+studentsRouter = require('./Routes/students');
+aluminiRouter = require('./Routes/alumini');
+registerRouter = require('./Routes/register');
+loginRouter = require('./Routes/login');
 userRouter = require('./Routes/users');
 blogRouter = require('./Routes/blog');
 adminRouter = require('./Routes/admin');
