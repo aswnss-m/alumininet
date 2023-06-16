@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
      setPassport(getPassport())
      nav('/')
-  }, [localStorage.getItem('admintoken')])
+  }, [sessionStorage.getItem('admintoken')])
 
   return (
     <div>

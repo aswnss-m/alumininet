@@ -29,7 +29,7 @@ function Home() {
       </div>
       <div className="blogSection">
         <StartPost />
-        <NewsCard />
+        {/* <NewsCard /> */}
         {blogs.map(blog => (
           <BlogCard key={blog._id} content={blog.content} author={blog.author} id = {blog._id}/> // Added key prop
         ))}

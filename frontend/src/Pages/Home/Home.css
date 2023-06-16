@@ -1,6 +1,6 @@
 .homeContainer{
     display: grid;
-    grid-template-columns: 2fr 6fr 2fr;
+    grid-template-columns: 2fr 6fr 15em;
     grid-template-areas: "profile blog event";
     min-height: 100vh;
     padding: 1em 1em;
@@ -30,7 +30,7 @@
         grid-template-areas: "profile blog"
                             "event blog"
                             "none blog";
-        grid-template-columns: auto 1fr;
+        grid-template-columns: 15em 1fr;
         grid-template-rows:auto auto;
     }
 }

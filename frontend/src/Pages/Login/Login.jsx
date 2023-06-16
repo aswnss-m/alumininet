@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import {API_URL} from "../../../Constants/"
 import {setPassport} from '../../Utils/passport'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const nav = useNavigate();
 
   const handeSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +18,8 @@ function Login() {
       .then((res) => {
         if (res.status === 200) {
           setPassport(res.data.token, res.data.userId);
+          nav("/")
+          window.location.reload();
         }
       })
       .catch((err) => {
