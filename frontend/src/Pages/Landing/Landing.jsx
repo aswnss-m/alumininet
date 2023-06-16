@@ -36,6 +36,7 @@ function Landing() {
                         <label htmlFor="email">Email</label>
                         <input type="email" name="email" id="email" placeholder="Enter your email"
                             value={email}
+                            autoComplete='email'
                             onChange={
                                 (e) => {
                                     setEmail(e.target.value)
@@ -46,6 +47,7 @@ function Landing() {
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password" id="password" placeholder="Enter your password"
                         value={password}
+                        autoComplete='current-password'
                         onChange={
                             (e) => {
                                 setPassword(e.target.value)

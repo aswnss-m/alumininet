@@ -21,9 +21,12 @@ function Navbar() {
     };
     
     const handleLogOut = () => {
-      window.location.reload()
+      // reload the window
+
       removePassport();
       setLoggedIn(false);
+      window.location.reload()
+      nav("/")
   };
 
   return (
@@ -38,26 +41,29 @@ function Navbar() {
             <p className='logoName inter-800'>AluminiNet</p>
           </span>
         </Link>
+      </div>
         <CapeLogo />
-      </div>
-      <div className="navLinks">
-        <span className="material-symbols-rounded">
-          description
-        </span>
-        <span className="material-symbols-rounded">
-          groups
-        </span>
-      </div>
       {!loggedIn ? (
         <div className="navButtons">
+     
           <Link to={'/register'}><button className='secondaryButton'>Join now</button></Link>
           <Link to={'/login'}><button className='primaryButton'>Sign In</button></Link>
         </div>
       ) : (
         <div className="navButtons">
+             <div className="navLinks">
           <span className="material-symbols-rounded">
-            person
+            description
           </span>
+          <span className="material-symbols-rounded">
+            groups
+          </span>
+        </div>
+          <Link to={'/profile'}>
+            <span className="material-symbols-rounded">
+              person
+            </span>
+          </Link>
           <button className='primaryButton' onClick={handleLogOut}>Log out</button>
         </div>
       )}

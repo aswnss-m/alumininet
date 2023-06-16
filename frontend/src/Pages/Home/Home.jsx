@@ -10,6 +10,18 @@ import axios from 'axios';
 import "./Home.css"
 function Home() {
   const [blogs, setBlogs] = useState([]);
+  const [profile, setProfile] = React.useState({})
+  React.useEffect(() => {
+    const id = localStorage.getItem('userId');
+    axios.get(`${API_URL}/users/profile?id=${id}`)
+      .then(res => {
+        setProfile(res.data);
+        console.log(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, [localStorage.getItem('userId')]);
 
   useEffect(() => {
     axios.get(`${API_URL}/blog/all`)
@@ -25,10 +37,10 @@ function Home() {
   return (
     <div className='homeContainer'>
       <div className="profileSection">
-        <ProfileCard />
+        <ProfileCard profile={profile}/>
       </div>
       <div className="blogSection">
-        <StartPost />
+        {profile.type&&<StartPost />}
         {/* <NewsCard /> */}
         {blogs.map(blog => (
           <BlogCard key={blog._id} content={blog.content} author={blog.author} id = {blog._id}/> // Added key prop

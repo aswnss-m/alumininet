@@ -16,13 +16,10 @@ function NewsSideCard() {
   return (
     <div className='eventCardContainer'>
       <p className="inter-800">Latest News</p>
-        {news.map((News)=>(<div className="eventListing">
-      <Link to={'#'} style={{
-        textDecoration: 'none',
-      }}>
+        {news.map((News)=>(<div className="eventListing" key={News._id}>
           <p className="inter-800 eventListingTitle">{News.title}</p>
-      </Link>
-          <p className="inter-500 eventListingDate">{News.date}</p>
+          <p className="inter-400">{News.description}</p>
+          <p className="inter-200 eventListingDate">posted : {News.date}</p>
         </div>
       ))}
     

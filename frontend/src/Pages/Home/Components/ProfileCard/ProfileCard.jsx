@@ -3,20 +3,8 @@ import "./ProfileCard.css";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import {API_URL} from "/Constants/index.js"
-function ProfileCard() {
+function ProfileCard({profile}) {
   const navigate = useNavigate();
-  const [profile, setProfile] = React.useState({})
-  React.useEffect(() => {
-    const id = localStorage.getItem('userId');
-    axios.get(`${API_URL}/users/profile?id=${id}`)
-      .then(res => {
-        setProfile(res.data);
-        console.log(res.data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }, [localStorage.getItem('userId')]);
   return (
     <div className='profileCard' onClick={()=>{navigate('/profile')}}>
       <span className="profileCardBanner"></span>
