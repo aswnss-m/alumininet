@@ -8,11 +8,13 @@ import axios from 'axios';
 function BlogCard({content,author,id}) {
   const [name, setName] = React.useState('');
   const [job, setJob] = React.useState('');
+  const [userid, setUserid] = React.useState('');
   const navigate = useNavigate();
   useEffect(() => {
     axios.get(`${API_URL}/users/author/${author}`).then(res => {
       setName(res.data.name);
       setJob(res.data.job);
+      setUserid(res.data.userid);
     }).catch(err => {
        ;
     });
@@ -30,7 +32,12 @@ function BlogCard({content,author,id}) {
             <div className="blogContent">
               <ReactMarkdown children={content.slice(0,70)+"..."}/>
             </div>
-                <button className='blogViewUser secondaryButton'>View User</button>
+                <button className='blogViewUser secondaryButton'
+                  onClick={()=>{
+                    navigate(`/user/${userid}`)
+                  }
+                }
+                >View User</button>
                 <button className='blogReadMore primaryButton' onClick={()=>{
                   navigate(`/blog/${id}`)
                 }}>read more</button>
