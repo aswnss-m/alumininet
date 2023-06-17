@@ -8,6 +8,7 @@ import {API_URL} from "../../../Constants/"
 function Register() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+    const [profile, setProfile] = useState(null);
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [batch, setBatch] = useState("2023");
@@ -26,14 +27,18 @@ function Register() {
         axios.post(`${API_URL}/register`, {
             name,
             email,
+            profile,
             password,
             batch,
             branch,
             number: phone,
             job,
             company
+        }, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+              }
         }).then((res) => {
-             ;
             alert("Registered successfully");
             window.location.href = '/login'
         }).catch((err) => {
@@ -82,6 +87,15 @@ function Register() {
                         onChange={
                             (e) => setConfirmPassword(e.target.value)
                         }/>
+                </div>
+                <div className="formGroup">
+                    <label htmlFor="profile">Profile Picture</label>
+                    <input type="file" name="profile" id="profile"
+                        onChange={
+                            (e) => setProfile(e.target.files[0])
+                        }
+                        accept=".jpg, .jpeg, .png"
+                    />
                 </div>
                 <div className="formGroup">
                     <label htmlFor="phone">Phone no:</label>
