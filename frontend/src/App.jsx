@@ -9,6 +9,7 @@ import Home from './Pages/Home/Home'
 import BlogPage from './Pages/BlogPage/BlogPage'
 import NewsPage from './Pages/NewsPage/NewsPage'
 import ProfilePage from './Pages/User/ProfilePage'
+import UserPage from './Pages/User/UserPage'
 import {getPassport} from './Utils/passport'
 function App() {
     const [loggedIn, setLoggedIn] = useState(getPassport());
@@ -38,6 +39,9 @@ function App() {
                     element = {<NewsPage/>}/>
                     <Route path={'/profile'}
                         element={<ProfilePage/>}/>
+                    <Route path={'/user/:id'}
+                        element={<UserPage/>}/>
+                    
                 </>
             } 
 
