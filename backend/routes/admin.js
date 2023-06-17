@@ -41,7 +41,13 @@ router.route('/delete/student').delete((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-
+// Route to delete student account
+router.route('/delete/student').delete((req, res) => {
+  const id = req.query.id;
+  User.findByIdAndDelete(id)
+    .then(() => res.json('Student deleted.'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
 
 // Route to get all users without sensitive information
 router.route('/all').get((req, res) => {
