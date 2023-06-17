@@ -16,7 +16,7 @@ function Login() {
       password
     })
       .then(res => {
-          console.log(res.data);
+           
         if (res.status === 200) {
             setPassport(res.data.token, res.data.user);
             nav('/');   

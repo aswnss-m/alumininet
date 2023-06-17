@@ -72,7 +72,7 @@ router.route('/add/admin').post((req, res) => {
 router.route('/login').post(async (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
-  console.log(username, password);
+   
 
   try {
     const admin = await Admin.findOne({ username });
@@ -101,7 +101,7 @@ router.route('/all/events').get((req, res) => {
 // Route to add event
 router.route('/add/event').post((req, res) => {
   const { title, description, date, time, venue } = req.body;
-  console.log(title, description, date, time, venue);
+   
 
   // Format the date as needed
   const newEvent = new Event({
@@ -134,7 +134,7 @@ router.route('/all/news').get((req, res) => {
 // add news
 router.route('/add/news').post((req, res) => {
   const { title, description, date} = req.body;
-  console.log(title, description, date);
+   
 
   const newNews = new News({
     title,
