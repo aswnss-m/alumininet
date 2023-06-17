@@ -20,7 +20,10 @@
     gap: 1em;
     align-items: center;
 }
-.writerProfilePic img{
-    border-radius: 100%;
-    object-fit: fill;
-}
+.writerProfilePic img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 10em;
+    height: 10em;
+  }
+  

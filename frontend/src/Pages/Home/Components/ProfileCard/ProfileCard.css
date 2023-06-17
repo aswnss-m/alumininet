@@ -18,8 +18,10 @@
 .profileCardDp {
     transform: translate(0, -50%);
     width: 6em;
-    border-radius: 100%;
+    height: 6em;
+    border-radius: 50%;
     border: 5px solid white;
+    object-fit: cover;
   }
 .profileCardDetails{
     text-align: center;

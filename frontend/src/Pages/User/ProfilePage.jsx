@@ -45,7 +45,7 @@ function ProfilePage() {
         <div className='profilePageContainer'>
             <div className="profilePageCard">
                 <div className="profilePageCardDP">
-                    <img src={`https://unsplash.it/200`}
+                    <img src={`${API_URL}/users/profile/${id}`}
                         alt=""/>
                 </div>
                 <div className="profilePageCardInfo">

@@ -23,7 +23,7 @@ function BlogCard({content,author,id}) {
     return (
         <div className='blogCard'>
                 <div className="blogHeaderImage">
-                  <img src="https://unsplash.it/100" alt=""/>
+                  <img src={`${API_URL}/users/profile/${userid}`} alt=""/>
                 </div>
                 <div className="blogHeaderDetails">
                   <p className="inter-600">{name}</p>

@@ -8,7 +8,7 @@ function ProfileCard({profile}) {
   return (
     <div className='profileCard' onClick={()=>{navigate('/profile')}}>
       <span className="profileCardBanner"></span>
-      <img src="https://unsplash.it/300" alt="" className="profileCardDp" />
+      <img src={`${API_URL}/users/profile/${profile._id}`} alt="" className="profileCardDp" />
       <div className="profileCardDetails">
         <h3 className="inter-500 profileCardName">{profile.name}</h3>
         <p className="profileCardJob inter-300">{profile.job}</p>

@@ -30,7 +30,7 @@ function BlogPage() {
         <div className="blogPage">
             <div className="blogWriterHeader">
                 <div className="writerProfilePic">
-                    <img src="https://unsplash.it/100" alt="" />
+                    <img src={`${API_URL}/users/profile/${user.userid}`} alt="" className='profilePicuture'/>
                 </div>
                     <span>
                         <h3>{user.name}</h3>

@@ -8,14 +8,14 @@ const News = require('../Models/News.model');
 
 // Route to get all student accounts
 router.get('/all/students', (req, res) => {
-  User.find({ type: false }) // Find users with type value false (students)
+  User.find({ type: false },"-profile") // Find users with type value false (students)
     .then(students => res.json(students))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
 // Route to get all alumni accounts
 router.get('/all/alumni', (req, res) => {
-  User.find({ type: true }) // Find users with type value true (alumni) 
+  User.find({ type: true }),"-profile" // Find users with type value true (alumni) 
     .then(alumni => res.json(alumni))
     .catch(err => res.status(400).json('Error: ' + err));
 });
