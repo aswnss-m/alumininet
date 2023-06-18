@@ -23,6 +23,7 @@ userRouter = require('./routes/users');
 blogRouter = require('./routes/blog');
 adminRouter = require('./routes/admin');
 
+
 app.use('/students',studentsRouter);
 app.use('/alumini',aluminiRouter);
 app.use('/admin',adminRouter);

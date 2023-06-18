@@ -37,3 +37,9 @@ router.get('/profile/:id', (req, res) => {
     .catch((err) => res.status(500).json({ message: 'Error: ' + err }));
 });
 module.exports = router;
+router.delete('/delete', (req, res) => {
+  const userId = req.query.id;
+  User.findByIdAndDelete(userId)
+    .then(() => res.json('User deleted.'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});

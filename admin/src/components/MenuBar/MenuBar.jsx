@@ -43,6 +43,13 @@ function MenuBar() {
             }>
               <span className='material-symbols-outlined'>shield_person</span> <span className="menuLinkCaption">Admin</span>
             </div>
+            <div className="menuLink" onClick={
+              () => {
+                nav('/staffs')
+              }
+            }>
+              <span className='material-symbols-outlined'>badge</span> <span className="menuLinkCaption">Staff</span>
+            </div>
         </div>
       
     </div>

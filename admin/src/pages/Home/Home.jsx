@@ -7,6 +7,7 @@ import Alumini from './Component/Forms/Alumini'
 import Event from './Component/Forms/Event'
 import News from './Component/Forms/News'
 import Admins from './Component/Forms/Admins'
+import Staff from './Component/Forms/Staff'
 function Home() {
   return (
     <div className='homeContainer'>
@@ -18,6 +19,7 @@ function Home() {
           < Route path='/events' element={<Event />} />
           < Route path='/news' element={<News />} />
           <Route path='/admin' element={<Admins />} />
+          <Route path='/staffs' element={<Staff />} />
         </Routes>
       </div>
     </div>

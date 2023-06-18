@@ -25,7 +25,6 @@ router.route('/').post(upload.single('profile'), async (req, res) => {
         contentType: req.file.mimetype
       },
       email,
-      +
       password,
       number,
       batch,
@@ -42,6 +41,41 @@ router.route('/').post(upload.single('profile'), async (req, res) => {
     res.status(400).json({ message: 'Error: ' + error });
   }
 });
+
+// add staff account
+router.route('/add/staff').post(async (req, res) => {
+  console.log(req.body)
+  const {name, email, password, department} = req.body;
+  try {
+    const existingUser = await User.findOne({ email }); // Add await here
+    if (existingUser) {
+      return res.status(400).json({ message: 'Email already exists' });
+    }
+  const newStaff = new User({
+    name,
+    email,
+    password,
+    number: "222222222",
+    batch: "2023",
+    branch: department,
+    type: "staff",
+    job: "",
+    company: "",
+    profile: ""
+  });
+  await newStaff.save()
+    .then(() => res.json('Staff added!'))
+    .catch(err => {
+      console.log(err)
+      res.status(400).json('Error: ' + err)});
+} catch (error) {
+  console.log(error);
+  res.status(400).json({ message: 'Error: ' + error });
+  console.log(error);
+}
+});
+  
+
 
 
 module.exports = router;

@@ -97,7 +97,13 @@ router.route('/login').post(async (req, res) => {
   }
 });
   
-
+//Route to get all users with type staff
+router.route('/all/staff').get((req, res) => {
+    User.find({ type: "staff" })
+      .then(users => res.json(users))
+      .catch(err => res.status(400).json('Error: ' + err));
+  });
+  
 // Route to get all the events
 router.route('/all/events').get((req, res) => {
     Event.find().then(events => res.json(events)).catch(err => res.status(400).json('Error: ' + err));
