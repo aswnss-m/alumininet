@@ -13,6 +13,9 @@
 }
 
 .profilePageCardDP{
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTozAs9eslhwEkvYDESTFfoxmXVN47HwUuFcaKrEH-fjH6oD6LAhNkscIOcYt3V1AlNVWM&usqp=CAU");
+    background-position: center;
+    background-size: cover;
     border-radius: 50%;
     overflow: hidden;
     width: 30vmin;

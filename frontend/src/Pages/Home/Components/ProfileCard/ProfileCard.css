@@ -17,6 +17,9 @@
 
 .profileCardDp {
     transform: translate(0, -50%);
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTozAs9eslhwEkvYDESTFfoxmXVN47HwUuFcaKrEH-fjH6oD6LAhNkscIOcYt3V1AlNVWM&usqp=CAU");
+    background-position: center;
+    background-size: cover;
     width: 6em;
     height: 6em;
     border-radius: 50%;
