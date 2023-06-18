@@ -21,15 +21,7 @@
     place-content: center;
     margin-left: 2.5%;
 }
-/* .profilePageCardDetails{
-    padding: 1em;
-}
-.profilePageButtons{
-    display: flex;
-} */
-.profilePageCardDP{
-    background-color: red;
-}
+
 .profilePageCardDP img{
     object-fit: contain;
     height: inherit;

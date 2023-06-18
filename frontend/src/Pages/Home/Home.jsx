@@ -11,17 +11,19 @@ import "./Home.css"
 function Home() {
   const [blogs, setBlogs] = useState([]);
   const [profile, setProfile] = React.useState({})
-  React.useEffect(() => {
-    const id = localStorage.getItem('userId');
-    axios.get(`${API_URL}/users/profile?id=${id}`)
-      .then(res => {
-        setProfile(res.data);
-         ;
-      })
-      .catch(err => {
-         ;
-      });
-  }, [localStorage.getItem('userId')]);
+  const [userId, setUserId] = useState(localStorage.getItem("userId")); // Added state for userId
+  useEffect(() => {
+    setUserId(localStorage.getItem("userId"));
+    if (userId) {
+      axios.get(`${API_URL}/users/profile?id=${userId}`)
+        .then(res => {
+          setProfile(res.data);
+        })
+        .catch(err => {
+          // Handle error
+        });
+    }
+  }, []);
 
   useEffect(() => {
     axios.get(`${API_URL}/blog/all`)
@@ -37,7 +39,7 @@ function Home() {
   return (
     <div className='homeContainer'>
       <div className="profileSection">
-        <ProfileCard profile={profile}/>
+        <ProfileCard profile={profile} id={userId}/>
       </div>
       <div className="blogSection">
         {profile.type&&<StartPost />}

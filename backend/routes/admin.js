@@ -15,7 +15,7 @@ router.get('/all/students', (req, res) => {
 
 // Route to get all alumni accounts
 router.get('/all/alumni', (req, res) => {
-  User.find({ type: true }),"-profile" // Find users with type value true (alumni) 
+  User.find({ type: true },"-profile") // Find users with type value true (alumni) 
     .then(alumni => res.json(alumni))
     .catch(err => res.status(400).json('Error: ' + err));
 });
@@ -82,7 +82,6 @@ router.route('/login').post(async (req, res) => {
 
   try {
     const admin = await Admin.findOne({ username });
-    console.log(admin)
     if (admin) {
       if (admin.password === password) {
         console.log("Admin logged in successfully")
@@ -122,7 +121,6 @@ router.route('/add/event').post((req, res) => {
     .save()
     .then(() => res.json('Event added!'))
     .catch((err) =>{
-      console.log(err)
        res.status(400).json('Error: ' + err)});
 });
 
@@ -151,7 +149,6 @@ router.route('/add/news').post((req, res) => {
     .save()
     .then(() => res.json('News added!'))
     .catch((err) =>{
-      console.log(err)
        res.status(400).json('Error: ' + err)}
         );
 });

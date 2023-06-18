@@ -52,12 +52,12 @@ function Navbar() {
       ) : (
         <div className="navButtons">
              <div className="navLinks">
-          <span className="material-symbols-rounded">
+          {/* <span className="material-symbols-rounded">
             description
           </span>
           <span className="material-symbols-rounded">
             groups
-          </span>
+          </span> */}
         </div>
           <Link to={'/profile'}>
             <span className="material-symbols-rounded">

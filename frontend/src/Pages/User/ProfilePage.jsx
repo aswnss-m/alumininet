@@ -13,13 +13,16 @@ function ProfilePage() {
     const [id, setId] = React.useState('');
     useEffect(() => {
         setId(localStorage.getItem('userId'));
-        axios.get(`${API_URL}/users/profile?id=${id}`).then(res => {
-            setProfile(res.data);
-             ;
-        }).catch(err => {
-             ;
-        });
-    }, [id]);
+        if (id) {
+          axios.get(`${API_URL}/users/profile?id=${id}`)
+            .then(res => {
+              setProfile(res.data);
+            })
+            .catch(err => {
+              // Handle error
+            });
+        }
+      }, [id]);
     useEffect(() => {
       if (profile.type) {
         axios.get(`${API_URL}/blog/user/${id}`)
@@ -27,7 +30,6 @@ function ProfilePage() {
             setBlogs(res.data);
           })
           .catch(err => {
-             ;
           });
       } else {
         axios.get(`${API_URL}/blog/all`)
@@ -35,7 +37,6 @@ function ProfilePage() {
             setAllBlogs(res.data);
           })
           .catch(err => {
-             ;
           });
       }
     }, [id, profile.type]);
