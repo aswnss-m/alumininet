@@ -13,7 +13,7 @@ router.route('/:id').get((req, res) => {
   
 // Route to get users with "type" value true
 router.route('/all').get((req, res) => {
-    User.find({ type: true })
+    User.find({ type: "true" })
       .then(users => res.json(users))
       .catch(err => res.status(400).json('Error: ' + err));
   });

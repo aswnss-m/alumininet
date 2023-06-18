@@ -42,7 +42,7 @@ function Home() {
         <ProfileCard profile={profile} id={userId}/>
       </div>
       <div className="blogSection">
-        {profile.type&&<StartPost />}
+        {profile.type === "true" && <StartPost />}
         {/* <NewsCard /> */}
         {blogs.map(blog => (
           <BlogCard key={blog._id} content={blog.content} author={blog.author} id = {blog._id}/> // Added key prop

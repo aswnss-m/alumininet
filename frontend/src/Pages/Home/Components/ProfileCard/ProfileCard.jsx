@@ -17,7 +17,15 @@ function ProfileCard({profile, id}) {
       <span className="profileCardBreak"></span>
       <div className="profileCardDetails2">
         <p className="profileCardBatch inter-700">
-          {profile.type ? "Alumini" : "Student"}
+          {
+            profile.type === "true" && "Alumini"
+          }
+          {
+            profile.type === "false" && "Student"
+          }
+          {
+            profile.type === "staff" && "Staff"
+          }
         </p>
         {/* <p className="PrfileCardBlogNo">No of Posts</p> */}
       </div>

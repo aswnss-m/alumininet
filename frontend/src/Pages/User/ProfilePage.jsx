@@ -24,7 +24,7 @@ function ProfilePage() {
         }
       }, [id]);
     useEffect(() => {
-      if (profile.type) {
+      if (profile.type === "true") {
         axios.get(`${API_URL}/blog/user/${id}`)
           .then(res => {
             setBlogs(res.data);
@@ -54,7 +54,7 @@ function ProfilePage() {
                         profile.name
                     }</h2>
                     {
-                    profile.type ? (
+                    profile.type=== "true" ? (
                         <>
                             <h3>{
                                 profile.job
@@ -76,7 +76,7 @@ function ProfilePage() {
                 } </div>
             </div>
 
-           {profile.type?(<>
+           {profile.type==="true"?(<>
               <div className="profilePageCard">
                   <StartPost/>
               </div>

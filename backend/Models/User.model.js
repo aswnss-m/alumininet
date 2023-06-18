@@ -28,8 +28,8 @@ const userSchema = new mongoose.Schema({
     },
     type: {
         // if true alunimi else student
-        type: Boolean,
-        default: false,
+        type: String,
+        default: "false",
         required: true,
     },
     branch: {

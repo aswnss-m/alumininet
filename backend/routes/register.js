@@ -7,16 +7,15 @@ const upload = multer({ storage });
 
 router.route('/').post(upload.single('profile'), async (req, res) => {
   const { name, email, password, number, batch, branch, job, company } = req.body;
-  console.log(req);
   try {
     const existingUser = await User.findOne({ email }); // Add await here
     if (existingUser) {
       return res.status(400).json({ message: 'Email already exists' });
     }
-    let type = false;
+    let type = "false";
     const year = new Date().getFullYear();
     if (Number(batch) < year) {
-      type = true;
+      type = "true";
     }
     // Create a new user object
     const newUser = new User({
@@ -26,6 +25,7 @@ router.route('/').post(upload.single('profile'), async (req, res) => {
         contentType: req.file.mimetype
       },
       email,
+      +
       password,
       number,
       batch,
@@ -39,7 +39,6 @@ router.route('/').post(upload.single('profile'), async (req, res) => {
     await newUser.save(); // Add await here
     res.json('User added!');
   } catch (error) {
-    console.log(error);
     res.status(400).json({ message: 'Error: ' + error });
   }
 });
