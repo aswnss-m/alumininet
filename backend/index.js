@@ -23,6 +23,11 @@ userRouter = require('./routes/users');
 blogRouter = require('./routes/blog');
 adminRouter = require('./routes/admin');
 
+app.get('/',(req,res)=>{
+    res.json({
+        message:"Welcome to the backend"
+    });
+});
 
 app.use('/students',studentsRouter);
 app.use('/alumini',aluminiRouter);
@@ -31,6 +36,7 @@ app.use('/register',registerRouter);
 app.use('/login',loginRouter)
 app.use('/users',userRouter)
 app.use('/blog',blogRouter)
+
 
 app.listen(port,()=>{
     console.log(`Server is running on port: ${port}`);
