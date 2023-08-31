@@ -5,9 +5,20 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT
 
-app.use(cors());
-app.use(express.json());
+const allowedOrigins = ["https://alumininet-seven.vercel.app","https://alumininet-admin.vercel.app/"];
 
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
+app.use(cors(corsOptions)); // Use CORS middleware with custom options
+app.use(express.json());
 // Connecting to the db
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri);
