@@ -5,7 +5,7 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT
 
-const allowedOrigins = ["https://alumininet-seven.vercel.app","https://alumininet-admin.vercel.app/"];
+const allowedOrigins = ["https://alumininet-seven.vercel.app","https://alumininet-admin.vercel.app","https://vercel.com/aswnss-m/alumininet/9P4aLgVWv5vgBgT2frW61XEwiZzm","https://vercel.com/aswnss-m/alumininet-admin/DVs3kuNkrX8ikPg6rdYHNEEEhVjE"];
 
 const corsOptions = {
   origin: function (origin, callback) {

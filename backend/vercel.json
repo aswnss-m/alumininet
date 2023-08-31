@@ -8,5 +8,8 @@
           "src": "/(.*)",
           "dest": "/"
         }
-    ]
+    ],
+    "headers": {
+        "Access-Control-Allow-Origin": ["https://vercel.com/aswnss-m/alumininet/9P4aLgVWv5vgBgT2frW61XEwiZzm","https://alumininet-seven.vercel.app","https://vercel.com/aswnss-m/alumininet-admin/DVs3kuNkrX8ikPg6rdYHNEEEhVjE","https://alumininet-admin.vercel.app"]
+      }
   }
